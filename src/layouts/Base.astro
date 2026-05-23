@@ -2,11 +2,15 @@
 export interface Props {
   title?: string;
   description?: string;
+  canonicalURL?: string;
+  ogImage?: string;
 }
 
 const {
   title = 'Fix My Forklift — Mornington Peninsula forklift servicing & repairs',
   description = 'Independent forklift repairs, servicing and breakdown response across the Mornington Peninsula. 30 years of plant experience. Linde specialists, all brands welcome.',
+  canonicalURL = 'https://fixmyforklift.com.au',
+  ogImage = 'https://fixmyforklift.com.au/images/logo.png',
 } = Astro.props;
 ---
 <!doctype html>
@@ -16,26 +20,43 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="generator" content={Astro.generator} />
   <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="canonical" href={canonicalURL} />
   <title>{title}</title>
   <meta name="description" content={description} />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://fixmyforklift.com.au" />
+  <meta property="og:url" content={canonicalURL} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:locale" content="en_AU" />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:alt" content="Fix My Forklift logo" />
+  <meta property="og:site_name" content="Fix My Forklift" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
 
   <!-- Local business schema -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "ProfessionalService"],
     "@id": "https://fixmyforklift.com.au",
     "name": "Fix My Forklift",
     "description": description,
     "url": "https://fixmyforklift.com.au",
     "telephone": "+61401296502",
     "email": "info@fixmyforklift.com.au",
+    "image": "https://fixmyforklift.com.au/images/logo.png",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Dromana",
@@ -43,8 +64,27 @@ const {
       "postalCode": "3936",
       "addressCountry": "AU"
     },
-    "areaServed": "Mornington Peninsula, Victoria",
-    "openingHours": "Mo-Fr 08:00-16:00"
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -38.337,
+      "longitude": 144.969
+    },
+    "areaServed": [
+      "Mornington Peninsula",
+      "Frankston",
+      "Rosebud",
+      "Mornington",
+      "Hastings",
+      "Somerville",
+      "Victoria"
+    ],
+    "openingHours": "Mo-Fr 08:00-16:00",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "16:00"
+    }
   })} />
 
   <link rel="stylesheet" href="/src/styles/global.css" />

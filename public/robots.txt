@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fixmyforklift.com.au/sitemap-index.xml
