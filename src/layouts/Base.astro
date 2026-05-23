@@ -1,0 +1,55 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Fix My Forklift — Mornington Peninsula forklift servicing & repairs',
+  description = 'Independent forklift repairs, servicing and breakdown response across the Mornington Peninsula. 30 years of plant experience. Linde specialists, all brands welcome.',
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fixmyforklift.com.au" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:locale" content="en_AU" />
+
+  <!-- Local business schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://fixmyforklift.com.au",
+    "name": "Fix My Forklift",
+    "description": description,
+    "url": "https://fixmyforklift.com.au",
+    "telephone": "+61401296502",
+    "email": "info@fixmyforklift.com.au",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dromana",
+      "addressRegion": "VIC",
+      "postalCode": "3936",
+      "addressCountry": "AU"
+    },
+    "areaServed": "Mornington Peninsula, Victoria",
+    "openingHours": "Mo-Fr 08:00-16:00"
+  })} />
+
+  <link rel="stylesheet" href="/src/styles/global.css" />
+</head>
+<body>
+  <slot />
+</body>
+</html>

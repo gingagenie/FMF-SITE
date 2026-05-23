@@ -1,0 +1,370 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/global.css';
+---
+<Base>
+
+  <!-- ===================================================
+       NAVIGATION
+       =================================================== -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+  <img src="/images/logo.png" alt="" class="nav__logo-img" />
+  <span class="nav__logo-text">Fix My Forklift</span>
+</a>
+      <div class="nav__links">
+        <a href="#services">Services</a>
+        <a href="#linde">Linde</a>
+        <a href="#process">How we work</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="tel:0401296502" class="nav__phone">0401 296 502</a>
+    </div>
+  </nav>
+
+  <!-- ===================================================
+       HERO
+       =================================================== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__eyebrow reveal reveal-1">
+        <span class="hero__eyebrow-dot"></span>
+        <span class="eyebrow">Serving the Mornington Peninsula</span>
+      </div>
+
+      <h1 class="hero__title reveal reveal-2">
+        Your forklift's<br />
+        <em>downtime</em><br />
+        ends here.
+      </h1>
+
+      <p class="hero__lede reveal reveal-3">
+        Independent forklift servicing, repairs and breakdown response across
+        the Peninsula. Thirty years of plant experience. One direct line.
+      </p>
+
+      <div class="hero__cta-row reveal reveal-4">
+        <a href="tel:0401296502" class="btn btn--primary">
+          Call now <span class="btn__arrow">→</span>
+        </a>
+        <a href="#contact" class="btn btn--ghost">
+          Request service
+        </a>
+      </div>
+
+      <div class="hero__meta reveal reveal-4">
+        <div class="hero__meta-item">
+          <span class="hero__meta-label">Hours</span>
+          <span class="hero__meta-value">MON–FRI / 8AM–4PM</span>
+        </div>
+        <div class="hero__meta-item">
+          <span class="hero__meta-label">Base</span>
+          <span class="hero__meta-value">DROMANA, VIC</span>
+        </div>
+        <div class="hero__meta-item">
+          <span class="hero__meta-label">Reach</span>
+          <span class="hero__meta-value">PENINSULA-WIDE</span>
+        </div>
+        <div class="hero__meta-item">
+          <span class="hero__meta-label">Specialty</span>
+          <span class="hero__meta-value">ALL BRANDS, LINDE EXPERT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       STATS — positioning power
+       =================================================== -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div>
+          <div class="stat__number">30</div>
+          <div class="stat__label">Years in plant &amp; engineering</div>
+        </div>
+        <div>
+          <div class="stat__number">5</div>
+          <div class="stat__label">Years as an independent</div>
+        </div>
+        <div>
+          <div class="stat__number">1</div>
+          <div class="stat__label">Direct line to the technician</div>
+        </div>
+        <div>
+          <div class="stat__number">0</div>
+          <div class="stat__label">Dealer markup. Independent.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SERVICES
+       =================================================== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services__intro">
+        <div>
+          <div class="spec-rule">Capabilities</div>
+          <h2>What we<br/>do best.</h2>
+        </div>
+        <p>
+          Three core services keeping Peninsula forklifts running. Every truck,
+          every brand — diagnosed by a mechanic with three decades on the tools,
+          not a sales rep.
+        </p>
+      </div>
+
+      <div class="services__grid">
+        <div class="service">
+          <div class="service__num">01 / Scheduled</div>
+          <h3 class="service__title">Preventative<br/>maintenance</h3>
+          <p class="service__desc">
+            Scheduled servicing at the right intervals to catch problems
+            before they catch you. Logbook-stamped, fleet-ready.
+          </p>
+          <ul class="service__features">
+            <li>Logbook service</li>
+            <li>Hydraulic checks</li>
+            <li>Mast &amp; chain inspection</li>
+            <li>Annual safety compliance</li>
+          </ul>
+        </div>
+
+        <div class="service">
+          <div class="service__num">02 / Diagnostic</div>
+          <h3 class="service__title">Repair<br/>service</h3>
+          <p class="service__desc">
+            Engine, hydraulic, electrical or transmission — diagnosed and
+            repaired on-site where possible. Melbourne parts network for
+            quick turnaround.
+          </p>
+          <ul class="service__features">
+            <li>Diesel, LPG &amp; electric</li>
+            <li>OEM &amp; aftermarket parts</li>
+            <li>On-site &amp; workshop</li>
+            <li>Fully trained</li>
+          </ul>
+        </div>
+
+        <div class="service">
+          <div class="service__num">03 / Response</div>
+          <h3 class="service__title">Breakdown<br/>response</h3>
+          <p class="service__desc">
+            When you're down, you're losing money. Fast response across the
+            Peninsula to get your truck moving and your operation back online.
+          </p>
+          <ul class="service__features">
+            <li>Same-day where possible</li>
+            <li>Direct technician line</li>
+            <li>Mobile fitted workshop</li>
+            <li>Peninsula-wide reach</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       LINDE BAND
+       =================================================== -->
+  <section class="linde" id="linde">
+    <div class="container">
+      <div class="linde__inner">
+        <div>
+          <div class="spec-rule">Brand specialty</div>
+          <h2 class="linde__title">Linde<br/>specialists.</h2>
+          <p class="linde__copy">
+            Trained at Linde. Worked on the entire fleet
+            before going independent. If you run Linde lifting
+            equipment on the Peninsula, you've found the right shop.
+          </p>
+          <div class="linde__creds">
+            All brands welcome — Toyota, Hyster, Crown, Yale, Caterpillar.
+          </div>
+        </div>
+        <div class="linde__brand">Linde</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       PROCESS
+       =================================================== -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="spec-rule" style="color: rgba(250,250,247,0.5);">Workflow</div>
+      <h2>How we<br/>work with you.</h2>
+
+      <div class="process__steps">
+        <div>
+          <div class="step__num">01</div>
+          <div class="step__title">Call or request</div>
+          <p class="step__desc">
+            One direct line. No call centre, no triage queue. You speak to
+            the mechanic.
+          </p>
+        </div>
+        <div>
+          <div class="step__num">02</div>
+          <div class="step__title">Diagnose</div>
+          <p class="step__desc">
+            On-site assessment of the issue. Clear, jargon-free explanation
+            of what's wrong and what it'll cost.
+          </p>
+        </div>
+        <div>
+          <div class="step__num">03</div>
+          <div class="step__title">Fix</div>
+          <p class="step__desc">
+            Repairs carried out on-site or in workshop. Parts sourced through
+            Melbourne suppliers for quick turnaround.
+          </p>
+        </div>
+        <div>
+          <div class="step__num">04</div>
+          <div class="step__title">Back in service</div>
+          <p class="step__desc">
+            Tested, logbook updated, you're operational. We keep your records
+            so the next service is even faster.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       CONTACT
+       =================================================== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__intro">
+          <div class="spec-rule">Get in touch</div>
+          <h2>Let's get you running.</h2>
+          <p>
+            Phone is fastest — straight through to the mechanic. Otherwise drop
+            details below and we'll get back to you same business day.
+          </p>
+
+          <div class="contact__details">
+            <div class="contact__detail">
+              <span class="contact__detail-label">Phone</span>
+              <span class="contact__detail-value">
+                <a href="tel:0401296502">0401 296 502</a>
+              </span>
+            </div>
+            <div class="contact__detail">
+              <span class="contact__detail-label">Email</span>
+              <span class="contact__detail-value">
+                <a href="mailto:info@fixmyforklift.com.au">info@fixmyforklift.com.au</a>
+              </span>
+            </div>
+            <div class="contact__detail">
+              <span class="contact__detail-label">Area</span>
+              <span class="contact__detail-value">Mornington Peninsula</span>
+            </div>
+            <div class="contact__detail">
+              <span class="contact__detail-label">Hours</span>
+              <span class="contact__detail-value">Mon–Fri / 8am–4pm</span>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          FORM NOTE FOR KEITH:
+          Currently set up for Web3Forms (free, no signup needed beyond grabbing
+          an access key from web3forms.com — takes 30 seconds, email-verified).
+          Replace YOUR_ACCESS_KEY_HERE below with your key.
+
+          Alternative: Formspree, Cloudflare Pages Forms, or just change the
+          action to a mailto: link as a fallback.
+        -->
+        <form class="form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="4d707dc7-002c-4cd3-98e6-f84a26222447" />
+          <input type="hidden" name="subject" value="New service request — fixmyforklift.com.au" />
+          <input type="hidden" name="from_name" value="FMF Website" />
+          <input type="checkbox" name="botcheck" style="display:none" />
+
+          <div class="form__field">
+            <label class="form__label" for="name">Your name</label>
+            <input class="form__input" type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="email">Email</label>
+            <input class="form__input" type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="phone">Phone</label>
+            <input class="form__input" type="tel" id="phone" name="phone" />
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="truck">Forklift — make &amp; model</label>
+            <input class="form__input" type="text" id="truck" name="truck" placeholder="e.g. Linde H25D" />
+          </div>
+
+          <div class="form__field">
+            <label class="form__label" for="details">What's going on?</label>
+            <textarea class="form__textarea" id="details" name="details" rows="3" placeholder="Service due, breakdown, hydraulic issue..."></textarea>
+          </div>
+
+          <button type="submit" class="form__submit">
+            Send request →
+          </button>
+
+          <p class="form__note">
+            Or just call 0401 296 502 — it's faster.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       FOOTER
+       =================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3>Fix My Forklift</h3>
+          <p>
+            Independent forklift servicing &amp; repairs across the Mornington
+            Peninsula. Thirty years on the tools.
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Preventative maintenance</a></li>
+            <li><a href="#services">Repair service</a></li>
+            <li><a href="#services">Breakdown response</a></li>
+            <li><a href="#linde">Linde specialists</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:0401296502">0401 296 502</a></li>
+            <li><a href="mailto:info@fixmyforklift.com.au">info@fixmyforklift.com.au</a></li>
+            <li>Dromana, VIC 3936</li>
+            <li>Mon–Fri 8am–4pm</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© {new Date().getFullYear()} Fix My Forklift</span>
+        <span>Mornington Peninsula · ABN holder · Sole trader</span>
+      </div>
+    </div>
+  </footer>
+
+</Base>
