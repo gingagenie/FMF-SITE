@@ -74,6 +74,8 @@ import '../styles/global.css';
     </div>
   </section>
 
+  <div class="hazard-stripe" aria-hidden="true"></div>
+
   <!-- ===================================================
        STATS — positioning power
        =================================================== -->
@@ -189,6 +191,35 @@ import '../styles/global.css';
       </div>
     </div>
   </section>
+
+  <!-- ===================================================
+       BRAND MARQUEE
+       =================================================== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="marquee__item">Toyota</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Hyster</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Crown</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Yale</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Caterpillar</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Mitsubishi</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Nissan</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Linde</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Clark</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Jungheinrich</span><span class="marquee__sep">◆</span>
+      <!-- duplicate for seamless loop -->
+      <span class="marquee__item">Toyota</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Hyster</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Crown</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Yale</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Caterpillar</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Mitsubishi</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Nissan</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Linde</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Clark</span><span class="marquee__sep">◆</span>
+      <span class="marquee__item">Jungheinrich</span><span class="marquee__sep">◆</span>
+    </div>
+  </div>
 
   <!-- ===================================================
        PROCESS
@@ -366,5 +397,40 @@ import '../styles/global.css';
       </div>
     </div>
   </footer>
+
+  <script>
+    // Animated stat counters
+    function animateCount(el, to, duration) {
+      const start = performance.now();
+      const update = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(to * eased);
+        if (progress < 1) requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+    }
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.dataset.target, 10);
+            if (target > 0) {
+              el.textContent = '0';
+              animateCount(el, target, 1400);
+            }
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.6 });
+
+      document.querySelectorAll('.stat__number').forEach(el => {
+        el.dataset.target = el.textContent.trim();
+        observer.observe(el);
+      });
+    }
+  </script>
 
 </Base>
